@@ -142,7 +142,8 @@ func TestAccountSet_ApplyDelta(t *testing.T) {
 				}
 
 				// apply delta
-				snapshot = snapshot.ApplyDelta(delta)
+				snapshot, err := snapshot.ApplyDelta(delta)
+				require.NoError(t, err)
 
 				// validate validator set
 				if len(step.expect) != snapshot.Len() {
