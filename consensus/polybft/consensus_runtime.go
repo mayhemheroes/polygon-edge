@@ -64,9 +64,6 @@ type epochMetadata struct {
 
 	FirstBlockInEpoch uint64
 
-	// Blocks is the list of blocks that we have to checkpoint in rootchain
-	Blocks []*types.Block
-
 	// Validators is the set of validators for the epoch
 	Validators AccountSet
 
@@ -428,7 +425,6 @@ func (c *consensusRuntime) restartEpoch(header *types.Header) error {
 	epoch := &epochMetadata{
 		Number:            epochNumber,
 		FirstBlockInEpoch: firstBlockInEpoch,
-		Blocks:            []*types.Block{},
 		Validators:        validatorSet,
 	}
 
