@@ -1,0 +1,6 @@
+project: polygon-edge
+target: polygon-edge
+
+cmds:
+  - cmd: /fuzz_bls_ecdsa_bytes
+    env: {}
